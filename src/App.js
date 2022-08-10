@@ -1,7 +1,18 @@
 import styled from "styled-components" 
 import Menu from './components/Menu'
 import Navbar from "./components/Navbar";
-import React from 'react'; 
+import  React from 'react'; 
+import Home from "./pages/Home"
+import Video from "./pages/Video"
+
+
+import ReactDOM from "react-dom/client";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 const Container = styled.div `
   display: flex;
 ` ;
@@ -16,44 +27,23 @@ const Wrapper = styled.div `` ;
 function App() {
   return (
     <Container>
-      <Menu/>
-      <Main>
-        <Navbar/>
-        <Wrapper>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-        </Wrapper>
+      <BrowserRouter> 
+        <Menu/>
+        <Main>
+          <Navbar/>
+          <Wrapper>
+            <Routes>
+              <Route path="/">
+                <Route index element={<Home/>}/>
+                <Route path="Video">
+                  <Route path=":id" element={<Video/>} />
+                </Route>
+              </Route>
+            </Routes>
+          </Wrapper>
 
-      </Main>
+        </Main>
+      </BrowserRouter>
     </Container>
 
   );
