@@ -1,5 +1,7 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
+import {Link} from "react-router-dom"
+
 import HomeIcon from '@mui/icons-material/Home';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -83,11 +85,13 @@ const Menu = () => {
     return ( 
     <Container>
         <Wrapper>
+        <Link to="/"  style={{textDecoration:"none" , color:"inherit"}}>
             <Logo>
                 {/*<Img src={ENSIASTube}/>*/}
                 <YouTubeIcon/>
                 ENSIASTube
             </Logo>
+        </Link>
             <Item>
                 <HomeIcon/>
                 Home
