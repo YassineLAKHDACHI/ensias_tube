@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import {Link} from "react-router-dom"
+import SignIn from '../pages/SignIn';
 
 import HomeIcon from '@mui/icons-material/Home';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -116,7 +117,9 @@ const Menu = () => {
             <Hr/>
             <Login>
                 Sign in to like videos, comment, and subscribe.
+                <Link to="signin" style={{textDecoration:"none"}}>
                 <Button><AccountCircleIcon/> SIGN IN </Button>
+                </Link>
             </Login>
             <Hr />
             <Title>BEST OF ENSIAS</Title>
